@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://Proyect2" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://Proyect2" xmlns:intf="http://Proyect2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://Proyect2" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="addition">
+    <complexType>
+     <sequence>
+      <element name="nm1" type="xsd:int"/>
+      <element name="nm2" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="additionResponse">
+    <complexType>
+     <sequence>
+      <element name="additionReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="additionRequest">
+
+      <wsdl:part element="impl:addition" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="additionResponse">
+
+      <wsdl:part element="impl:additionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="webAdder">
+
+      <wsdl:operation name="addition">
+
+         <wsdl:input message="impl:additionRequest" name="additionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:additionResponse" name="additionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="webAdderSoapBinding" type="impl:webAdder">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="addition">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="additionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="additionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="webAdderService">
+
+      <wsdl:port binding="impl:webAdderSoapBinding" name="webAdder">
+
+         <wsdlsoap:address location="http://localhost:8080/Proyect2/services/webAdder"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
