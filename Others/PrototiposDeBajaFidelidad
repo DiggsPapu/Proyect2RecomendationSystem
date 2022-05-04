@@ -1,1 +1,78 @@
-<mxfile host="app.diagrams.net" modified="2022-05-04T14:30:09.946Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36 OPR/85.0.4341.75" version="17.5.0" etag="etCzxky7VzBRj-pklZ6f" type="github"><diagram id="32KObso4JE4kYJgZL_V8">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-05-04T14:30:14.788Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36 OPR/85.0.4341.75" etag="no05oGtwJEshhl0hUMfc" version="17.5.0" type="github">
+  <diagram id="32KObso4JE4kYJgZL_V8" name="Page-1">
+    <mxGraphModel dx="948" dy="395" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-1" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="170" y="60" width="340" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-2" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="60" width="310" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c0fABMQxHXWJsRt-qIqt-1" target="c0fABMQxHXWJsRt-qIqt-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-4" value="Ingreso:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="180" y="70" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-5" value="Nombre de usuario" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="65" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-6" value="Contrasenia" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="65" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-7" value="Ingreso" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="65" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c0fABMQxHXWJsRt-qIqt-9" target="c0fABMQxHXWJsRt-qIqt-19">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-9" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="730" y="40" width="360" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-10" value="Registrarse:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="180" y="150" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-11" value="Nombre de usuario" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="155" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-12" value="Contrasenia" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="155" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-13" value="Preguntas:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="180" y="200" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-14" value="-¿Cuánto está dispuesto a invertir?: a.)&lt;span style=&quot;white-space: pre&quot;&gt; &lt;/span&gt;$0-$100&lt;br&gt;b.)$100-$500&lt;br&gt;... varias preguntas" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="200" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-15" value="Enviar" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-16" value="Encuesta de confirmación de gustos" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="40" width="210" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-17" value="a.) ¿Qué tipo de sector le llama más la atención?&lt;br&gt;-Ganaderia&lt;br&gt;-Pesca&lt;br&gt;-Agricultura&lt;br&gt;..." style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="80" width="260" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-18" value="Enviar" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-19" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="40" width="360" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-20" value="Recomendaciones" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="50" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-21" value="Lista de empresas:&lt;br&gt;- Avianca&lt;br&gt;- Kaleo&lt;br&gt;-Unix&lt;br&gt;- Omega&lt;br&gt;- Seleccion&lt;br&gt;Lista de personas con las que hacer negocio" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1275" y="95" width="245" height="215" as="geometry" />
+        </mxCell>
+        <mxCell id="c0fABMQxHXWJsRt-qIqt-22" value="Daniel-Unix&lt;br&gt;Raul-Kaleo&lt;br&gt;Javier-Omega" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
