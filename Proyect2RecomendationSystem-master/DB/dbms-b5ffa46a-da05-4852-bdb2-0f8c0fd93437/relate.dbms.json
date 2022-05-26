@@ -1,0 +1,36 @@
+{
+  "name": "Movie DBMS 1103044a",
+  "description": "An example graph with movies and related people.",
+  "tags": [
+    "neo4j-desktop-dbms-database-1103044a-a3a6-4864-ab75-20f76ea9f4d4"
+  ],
+  "id": "b5ffa46a-da05-4852-bdb2-0f8c0fd93437",
+  "metadata": {
+    "neo4jDesktopDbmsDatabases": [
+      {
+        "name": "neo4j",
+        "role": "standalone",
+        "requestedStatus": "online",
+        "currentStatus": "online",
+        "error": "",
+        "default": true,
+        "statistics": {
+          "nodes": 11,
+          "relationships": 19,
+          "labels": 2,
+          "relationshipTypes": 5,
+          "propertyKeys": 16
+        }
+      },
+      {
+        "name": "system",
+        "role": "standalone",
+        "requestedStatus": "online",
+        "currentStatus": "online",
+        "error": "",
+        "default": false
+      }
+    ]
+  },
+  "isCustomPathInstallation": false
+}
