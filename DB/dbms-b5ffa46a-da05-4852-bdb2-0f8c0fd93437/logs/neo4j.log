@@ -1,0 +1,116 @@
+﻿Directories in use:
+home:         C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437
+config:       C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\conf
+logs:         C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\logs
+plugins:      C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\plugins
+import:       C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\import
+data:         C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\data
+certificates: C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\certificates
+licenses:     C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\licenses
+run:          C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\run
+Starting Neo4j.
+2022-04-29 09:23:32.435+0000 INFO  Starting...
+2022-04-29 09:23:38.088+0000 INFO  This instance is ServerId{dfc6400d} (dfc6400d-7eec-47fb-990a-2e5ec687636b)
+2022-04-29 09:23:54.543+0000 INFO  ======== Neo4j 4.4.5 ========
+2022-04-29 09:24:27.460+0000 INFO  Sending metrics to CSV file at C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\metrics
+2022-04-29 09:24:27.583+0000 INFO  Bolt enabled on 127.0.0.1:7687.
+2022-04-29 09:24:37.432+0000 INFO  Remote interface available at http://localhost:7474/
+2022-04-29 09:24:37.442+0000 INFO  id: 3879A39A3BF91EBF2A2E4D0C46A9A495F0A6640A8C0713EC43D15D64D2BA280C
+2022-04-29 09:24:37.442+0000 INFO  name: system
+2022-04-29 09:24:37.442+0000 INFO  creationDate: 2022-04-29T09:24:02.129Z
+2022-04-29 09:24:37.442+0000 INFO  Started.
+2022-04-29 09:31:40.796+0000 ERROR Client triggered an unexpected error [Neo.DatabaseError.General.UnknownError]: Lexical error at line 1, column 26.  Encountered: <EOF> after : "", reference 2e290331-179f-4273-9fd2-ef8da1545c0a.
+2022-04-29 09:31:42.620+0000 ERROR Client triggered an unexpected error [Neo.DatabaseError.General.UnknownError]: Lexical error at line 1, column 24.  Encountered: <EOF> after : "", reference f5294baf-b2b2-4653-9fc5-b525c019529f.
+2022-04-29 09:31:45.310+0000 ERROR Client triggered an unexpected error [Neo.DatabaseError.General.UnknownError]: Lexical error at line 1, column 29.  Encountered: <EOF> after : "", reference 6f6f622f-7289-4167-8b62-2144327ee365.
+2022-04-29 09:31:52.628+0000 ERROR Client triggered an unexpected error [Neo.DatabaseError.General.UnknownError]: Lexical error at line 1, column 41.  Encountered: <EOF> after : "", reference 630e2944-676a-41b2-9c3b-58423559dd5a.
+2022-04-29 09:31:54.985+0000 ERROR Client triggered an unexpected error [Neo.DatabaseError.General.UnknownError]: Lexical error at line 1, column 45.  Encountered: <EOF> after : "", reference 64c58877-7f4e-442b-bae4-a3a71cb3a566.
+2022-04-29 10:57:44.054+0000 ERROR Client triggered an unexpected error [Neo.DatabaseError.General.UnknownError]: Lexical error at line 1, column 44.  Encountered: <EOF> after : "", reference b054db92-01e3-4fb5-bef9-9f35c8093e95.
+Directories in use:
+home:         C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437
+config:       C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\conf
+logs:         C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\logs
+plugins:      C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\plugins
+import:       C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\import
+data:         C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\data
+certificates: C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\certificates
+licenses:     C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\licenses
+run:          C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\run
+Starting Neo4j.
+2022-04-29 22:09:45.516+0000 INFO  Starting...
+2022-04-29 22:09:51.576+0000 INFO  This instance is ServerId{dfc6400d} (dfc6400d-7eec-47fb-990a-2e5ec687636b)
+2022-04-29 22:10:00.275+0000 INFO  ======== Neo4j 4.4.5 ========
+2022-04-29 22:10:13.932+0000 INFO  Sending metrics to CSV file at C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\metrics
+2022-04-29 22:10:14.026+0000 INFO  Bolt enabled on 127.0.0.1:7687.
+2022-04-29 22:10:19.771+0000 INFO  Remote interface available at http://localhost:7474/
+2022-04-29 22:10:19.777+0000 INFO  id: 3879A39A3BF91EBF2A2E4D0C46A9A495F0A6640A8C0713EC43D15D64D2BA280C
+2022-04-29 22:10:19.777+0000 INFO  name: system
+2022-04-29 22:10:19.777+0000 INFO  creationDate: 2022-04-29T09:24:02.129Z
+2022-04-29 22:10:19.777+0000 INFO  Started.
+2022-04-29 22:10:41.041+0000 ERROR LEAK: ByteBuf.release() was not called before it's garbage-collected. See https://netty.io/wiki/reference-counted-objects.html for more information.
+Recent access records: 
+Created at:
+	io.netty.buffer.AbstractByteBufAllocator.compositeDirectBuffer(AbstractByteBufAllocator.java:224)
+	io.netty.buffer.AbstractByteBufAllocator.compositeBuffer(AbstractByteBufAllocator.java:202)
+	io.netty.handler.codec.MessageAggregator.decode(MessageAggregator.java:271)
+	io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:88)
+	io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:327)
+	io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:299)
+	io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	io.netty.handler.codec.ByteToMessageDecoder.handlerRemoved(ByteToMessageDecoder.java:255)
+	io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:517)
+	io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:449)
+	io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:279)
+	io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	org.neo4j.bolt.transport.pipeline.AuthenticationTimeoutHandler.channelRead(AuthenticationTimeoutHandler.java:58)
+	io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722)
+	io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	java.base/java.lang.Thread.run(Thread.java:829)
+2022-04-30 00:05:24.919+0000 INFO  Neo4j Server shutdown initiated by request
+2022-04-30 00:05:24.920+0000 INFO  Stopping...
+2022-04-30 00:05:24.920+0000 INFO  Stopped.
+Directories in use:
+home:         C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437
+config:       C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\conf
+logs:         C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\logs
+plugins:      C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\plugins
+import:       C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\import
+data:         C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\data
+certificates: C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\certificates
+licenses:     C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\licenses
+run:          C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\run
+Starting Neo4j.
+2022-04-30 00:37:20.735+0000 INFO  Starting...
+2022-04-30 00:37:24.172+0000 INFO  This instance is ServerId{dfc6400d} (dfc6400d-7eec-47fb-990a-2e5ec687636b)
+2022-04-30 00:37:29.430+0000 INFO  ======== Neo4j 4.4.5 ========
+2022-04-30 00:37:38.419+0000 INFO  Sending metrics to CSV file at C:\Users\Windows 10\.Neo4jDesktop\relate-data\dbmss\dbms-b5ffa46a-da05-4852-bdb2-0f8c0fd93437\metrics
+2022-04-30 00:37:38.482+0000 INFO  Bolt enabled on 127.0.0.1:7687.
+2022-04-30 00:37:41.343+0000 INFO  Remote interface available at http://localhost:7474/
+2022-04-30 00:37:41.356+0000 INFO  id: 3879A39A3BF91EBF2A2E4D0C46A9A495F0A6640A8C0713EC43D15D64D2BA280C
+2022-04-30 00:37:41.357+0000 INFO  name: system
+2022-04-30 00:37:41.358+0000 INFO  creationDate: 2022-04-29T09:24:02.129Z
+2022-04-30 00:37:41.358+0000 INFO  Started.
+2022-04-30 00:50:41.083+0000 INFO  Neo4j Server shutdown initiated by request
+2022-04-30 00:50:41.083+0000 INFO  Stopping...
+2022-04-30 00:50:41.083+0000 INFO  Stopped.

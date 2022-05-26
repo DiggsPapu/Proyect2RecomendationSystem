@@ -1,0 +1,70 @@
+	Create users
+CREATE(id:user{name:'Diego',password:'EstoyInLove:v',id:1234, size:'underdog', TypeBusiness1:'Alimentacion', TypeBusiness2:'Industrias Quimicas', TypeBusiness3: 'Turismo', Risk:5, InvestingPotency:4 , rentability:4}),(id1:user{name:'Gaby',password:'jiji',id:1235, size:'muy grande', TypeBusiness1:'Comercio', TypeBusiness2:'Agricultura', TypeBusiness3: 'Industrias Quimicas', Risk: 2, InvestingPotency:4, rentability:3}),(id2:user{name:'Ulises',password:'eo',id:1236, size:'grande', TypeBusiness1:'Construccion', TypeBusiness2:'Minería y petroleo', TypeBusiness3: 'Servicios de Salud', Risk: 5, InvestingPotency:1, rentability:4}),(id32:user{name:'Daniel',password:'tike',id:1238, size:'grande', TypeBusiness1:'Comercio', TypeBusiness2:'Funcion Publica', TypeBusiness3: 'Textiles', Risk:4, InvestingPotency:1 , rentability:2}) 
+
+	Create Business
+CREATE(Acciona:business{name:'Acciona',cotizacion:190.10,rentabilidad:2.16,var:13.09,capital:10.389,PrecioBeneficio:24.29,sector:'Servicios Publicos'}), 
+(ACS:business{name:'ACS',cotizacion:24.90,rentabilidad:7.60,var:5.64,capital:7.150,PrecioBeneficio:13.96,sector:'Construccion'}),
+(Acerinox:business{name:'Acerinox',cotizacion:10.06,rentabilidad:5.35,var:-11.64,capital:2.713,PrecioBeneficio:4.44,sector:'Mineria y petroleo'}),(bus3:business{name:'AENA SA',cotizacion:135.90,rentabilidad:2.20,var:2.09,capital:20.385,PrecioBeneficio:37.36,sector:'Servicios Publicos'}),
+(Almirall:business{name:'Almirall',cotizacion:12.47,rentabilidad:1.22,var:2.09,capital:2.242,PrecioBeneficio:1.22,sector:'Industrias Quimicas'}),
+(Amadeus:business{name:'Amadeus',cotizacion:60.74,rentabilidad:1.13,var:1.84,capital:27.326,PrecioBeneficio:43.03,sector:'Turismo'}),
+(PharmaMar:business{name:'PharmaMar',cotizacion:72.980,rentabilidad:0.72,var:29.60,capital: 1.331,PrecioBeneficio:19.30,sector:'Industrias Quimicas'})
+
+
+
+
+	Change an attribute
+match(n{name:'Almirall'}) set n.sector ='Industrias Quimicas' return n.name, n.sector
+
+	Filtering algorithms
+
+Relationship between sectors and users
+match(a:user),(b:business) 
+where a.TypeBusiness1=b.sector OR a.TypeBusiness2=b.sector OR a.TypeBusiness3=b.sector 
+Create(a)-[r:InterestedInTheSectorOf{name: a.name +'<->' + b.name}]->(b)
+return type (r), r.name
+
+Relationship between business sector and business
+match(a:business),(b:business) 
+where a.sector=b.sector AND a.name<>b.name AND a.PrecioBeneficio<>b.PrecioBeneficio 
+Create(a)-[r:InTheSameSectorAs{name: a.name +'<->' + b.name}]->(b)
+return type (r), r.name
+
+Relationship between if wants to be a big business or not
+match(a:user),(b:business) 
+where a.size='muy grande' AND b.capital>=50 OR a.size='grande' AND b.capital<50 AND b.capital>=30 OR a.size='mediana' AND b.capital<30 AND b.capital>=15 OR a.size='little' AND b.capital<15 AND b.capital>=3  OR a.size='underdog' AND b.capital<3
+Create(a)-[r:TheSizeTheyWant{name: a.name +'<->' + b.name}]->(b)
+return type (r), r.name
+
+Relationship of risk
+match(a:user),(b:business) 
+where a.Risk= 5 AND b.var< -1 OR a.Risk=4 AND b.var<0 AND b.var>=-1 OR a.Risk = 3 AND b.var<2 AND b.var >= 0 OR a.Risk = 2 AND b.var<5 AND b.var>=2  OR a.Risk = 1 AND b.var>5
+Create(a)-[r:TheRiskTheyWant{name: a.name +'<->' + b.name}]->(b)
+return type (r), r.name
+
+Relationship of rentability
+match(a:user),(b:business) 
+where a.rentability= 5 AND b.rentabilidad>30 OR a.rentability=4 AND b.rentabilidad<=30 AND b.rentabilidad>15 OR a.rentability = 3 AND b.rentabilidad<=15 AND b.rentabilidad > 10 OR a.rentability = 2 AND b.rentabilidad<=10 AND b.rentabilidad>=5  OR a.rentability = 1 AND b.rentabilidad<5 OR b.rentabilidad = null
+Create(a)-[r:TheWishedRentability{name: a.name +'<->' + b.name}]->(b)
+return type (r), r.name
+
+Query de posibles socios: To get those that could make a team
+	Donde tienen todo igual
+match(u:business)<-[:InterestedInTheSectorOf]-(a:user)
+match(u:business)<-[:TheSizeTheyWant]-(a:user)
+match(u:business)<-[:InterestedInTheSectorOf]-(b:user)
+match(u:business)<-[:TheSizeTheyWant]-(b:user)
+where a.id<>b.id 
+return a.name AS Person, b.name AS PartnerRecommendation
+
+Delete relationships
+match(a:user)-[r:SectorRelation]->()
+delete r
+
+Delete nodes
+	Delete by name
+Match(a:user{name:"Diego"})
+delete a
+
+
+
+CREATE(Acciona:business{name:'PharmaMar',cotizacion:72.980,rentabilidad:2.16,var:1.59,capital:10.389,PrecioBeneficio:24.29,sector:'Servicios Publicos'})
