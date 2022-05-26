@@ -98,7 +98,9 @@ public class Neo4j implements AutoCloseable{
                 @Override
                 public LinkedList<String> execute( Transaction tx )
                 {
-                    Result result = tx.run( "MATCH (tom:Person {name: \"" + user + "\"})-[:ACTED_IN]->(actorMovies) RETURN actorMovies.title");
+                	
+                	Result sector = tx.run( "match (a:user {name: \"" + user + "\"})-[:InterestedInTheSectorOf]->(business)");
+                	Result sizeTheyWant= tx.run( "match (a:user {name: \"" + user + "\"})-[:InterestedInTheSectorOf]->(business)");
                     LinkedList<String> myactors = new LinkedList<String>();
                     List<Record> registros = result.list();
                     for (int i = 0; i < registros.size(); i++) {
@@ -124,7 +126,7 @@ public class Neo4j implements AutoCloseable{
                 @Override
                 public String execute( Transaction tx )
                 {
-                    tx.run( "CREATE (Test:user {id:'" + id + "', password:"+ password + "', rentability:"+ rentability+ ", size:'"+ size + "', TypeBusiness1:"+ TypeBusiness1+ "', TypeBusiness2:"+ TypeBusiness2+ "', TypeBusiness3:"+ TypeBusiness3+ "', InvestingPotency:"+ InvestingPotency+"'})");
+                    tx.run( "CREATE (b:User {id:'" + id + "', password:"+ password + "', rentability:"+ rentability+ ", size:'"+ size + "', TypeBusiness1:"+ TypeBusiness1+ "', TypeBusiness2:"+ TypeBusiness2+ "', TypeBusiness3:"+ TypeBusiness3+ "', InvestingPotency:"+ InvestingPotency+"'})");
                     
                     return "OK";
                 }

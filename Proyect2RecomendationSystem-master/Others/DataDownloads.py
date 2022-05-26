@@ -30,16 +30,31 @@ df = df_list[-1]
 print(df)
 
 #df.to_csv(r'C:\Users\Administrator\Documents\Proyecto\Proyecto2\Proyect2RecomendationSystem-master\Others\data.csv', index=False)
-n=0
 greeter = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "Manager123"))
-
+n=0
 while (n<35):
-    
     nombre=df['Nombre'].values[n]
-    per=df['PER'].values[n]
-    pvc=df['PVC'].values[n]
-    peg=df['PEG'].values[n]
-    div=df['Dividendo'].values[n]
+    a=df['PER'].values[n]
+    if (a!='-'):
+        per=int(a)
+    else:
+        per=None
+    b=df['PEG'].values[n]
+   
+    if (b!="-"):
+        peg=int(b)
+    else:
+        peg=None
+    c = df['PVC'].values[n]
+    if (c!="-"):
+        pvc=int(c)
+    else:
+        pvc=None
+    
+    d=df['Dividendo'].values[n]
+    d= d.replace(",",".")
+    div=float(float(d[:-1])/100)
+    
     sector = ""
     if (nombre=="Banco Sabadell" or nombre=="Banco Santander" or nombre=="Caixabank" or nombre=="Bankinter" or nombre=="BBVA"):
         sector = "Bancos" #Bancos
@@ -66,11 +81,10 @@ while (n<35):
     elif (nombre == "Inmobiliaria Colonial" or "MERLIN Properties"):
         sector = "Inmobiliaria"
     
-    print(str(nombre)+str(pvc)+str(peg)+str(div)+str(sector))
     with greeter.session() as session:
         # query = ("create (a:Business{name:NAME,per:per,PVC:PVC,PEG:$PVC,DIV:$DIV,SECTOR:$SECTOR})")
-        query = "create(a:Bussiness{name:'"+str(nombre)+"',PER:'"+str(per)+"',PVC:"+str(pvc)+",PEG:'"+str(peg)+"',DIV:'"+str(div)+"',SECTOR:'"+sector+"'})"
+        query = "create(a:Business{name:'"+str(nombre)+"',PER:'"+str(per)+"',PVC:"+str(pvc)+",PEG:'"+str(peg)+"',DIV:'"+str(div)+"',SECTOR:'"+sector+"'})"
         session.run(query)
-    n=n+1
+    n=n+1 
 
 greeter.close()
