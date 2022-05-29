@@ -3,7 +3,6 @@
 	<name>Proyecto2WebEAR</name>
 	<comment></comment>
 	<projects>
-		<project>Proyecto2Web</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -30,7 +30,6 @@ public class Neo4j implements AutoCloseable{
     {
         driver = GraphDatabase.driver( uri, AuthTokens.basic( user, password ) );
     }
-@Override
     public void close() throws Exception
     {
         driver.close();
@@ -116,28 +115,53 @@ public class Neo4j implements AutoCloseable{
 //        }
 //   }
     
-    public String insertPerson(final int id, String name, final int password, final String rentability, final int size, final String TypeBusiness1, final String TypeBusiness2, final String TypeBusiness3, final String InvestingPotency) {
-    	try ( Session session = driver.session() ) //Initialize driver
+public String insertPerson(final int id, String name, final int password, final String rentability, final int size, final String TypeBusiness1, final String TypeBusiness2, final String TypeBusiness3, final String InvestingPotency) {
+	try ( Session session = driver.session() ) //Initialize driver
+    {
+		 
+		 String result = session.writeTransaction( new TransactionWork<String>()
+		 
         {
-   		 
-   		 String result = session.writeTransaction( new TransactionWork<String>()
-   		 
+            @Override
+            public String execute( Transaction tx )
             {
-                @Override
-                public String execute( Transaction tx )
-                {
-                    tx.run( "CREATE (b:User {ID:'" + id + "', PASSWORD:"+ password + "', rentability:"+ rentability+ ", size:'"+ size + "', TypeBusiness1:"+ TypeBusiness1+ "', TypeBusiness2:"+ TypeBusiness2+ "', TypeBusiness3:"+ TypeBusiness3+ "', InvestingPotency:"+ InvestingPotency+"'})");
-                    
-                    return "OK";
-                }
+//            	tx.run( "CREATE (b:User {ID:'" + id + "', PASSWORD:"+ password + "', rentability:"+ rentability+ ", size:'"+ size + "', TypeBusiness1:"+ TypeBusiness1+ "', TypeBusiness2:"+ TypeBusiness2+ "', TypeBusiness3:"+ TypeBusiness3+ "', InvestingPotency:"+ InvestingPotency+"'})");
+            	tx.run( "CREATE (b:User {ID:'" + id + "', PASSWORD:"+ password +"'})");
+                
+                return "OK";
             }
-   		 
-   		 );
-            
-            return result;
-        } catch (Exception e) {
-        	return e.getMessage();
         }
+		 
+		 );
+        
+        return result;
+    } catch (Exception e) {
+    	return e.getMessage();
     }
+}
 
+public String insertPerson1(final String name, final String password ) {
+	try ( Session session = driver.session() ) //Initialize driver
+    {
+		 
+		 String result = session.writeTransaction( new TransactionWork<String>()
+		 
+        {
+            @Override
+            public String execute( Transaction tx )
+            {
+//            	tx.run( "CREATE (b:User {ID:'" + id + "', PASSWORD:"+ password + "', rentability:"+ rentability+ ", size:'"+ size + "', TypeBusiness1:"+ TypeBusiness1+ "', TypeBusiness2:"+ TypeBusiness2+ "', TypeBusiness3:"+ TypeBusiness3+ "', InvestingPotency:"+ InvestingPotency+"'})");
+            	tx.run( "CREATE (b:User {NAME:'" + name + "', PASSWORD:"+ password +"'})");
+                
+                return "OK";
+            }
+        }
+		 
+		 );
+        
+        return result;
+    } catch (Exception e) {
+    	return e.getMessage();
+    }
+}
 }
