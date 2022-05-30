@@ -59,9 +59,9 @@
 		$.ajax( {
 			
 			type: "GET",
-			url: '/Proyect2/CreateUsersServlet?name=' + $('#username').val() + '&password=' + $('#username').val() ,
+			url: '/Proyect2/CreateUsersServlet?name=' + $('#username').val() + '&password=' + $('#password').val() ,
 			success: function(data) {
-			    alert("Resultado: " + data.resultado);
+			    alert("Resultado1: " + data.resultado);
 			}
 		} );
 		

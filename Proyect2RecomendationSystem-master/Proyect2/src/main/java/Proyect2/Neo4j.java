@@ -150,9 +150,11 @@ public String insertPerson1(final String name, final String password ) {
             @Override
             public String execute( Transaction tx )
             {
+            	String name1 = new String(name);
+            	String password1 = new String(password);
 //            	tx.run( "CREATE (b:User {ID:'" + id + "', PASSWORD:"+ password + "', rentability:"+ rentability+ ", size:'"+ size + "', TypeBusiness1:"+ TypeBusiness1+ "', TypeBusiness2:"+ TypeBusiness2+ "', TypeBusiness3:"+ TypeBusiness3+ "', InvestingPotency:"+ InvestingPotency+"'})");
-            	tx.run( "CREATE (b:User {NAME:'" + name + "', PASSWORD:"+ password +"'})");
-                
+            	tx.run( "CREATE (b:User {name:'"+name1+"', password:'"+password1+"'})");
+            	
                 return "OK";
             }
         }

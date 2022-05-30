@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="Proyect2/" kind="src" path="java"/>
+	<classpathentry kind="src" path="java/Proyect2"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/axis.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/neo4j-java-driver-4.2.5.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/reactive-streams-1.0.3.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/saaj.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/wsdl4j.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

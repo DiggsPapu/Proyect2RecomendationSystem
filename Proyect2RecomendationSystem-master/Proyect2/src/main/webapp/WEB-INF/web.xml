@@ -5,8 +5,5 @@
     <welcome-file>Proyect2.html</welcome-file>
     <welcome-file>Proyect2.htm</welcome-file>
     <welcome-file>Proyect2.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

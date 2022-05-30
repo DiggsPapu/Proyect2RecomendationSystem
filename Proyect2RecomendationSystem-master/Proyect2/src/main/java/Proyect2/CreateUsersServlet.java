@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +17,7 @@ import Proyect2.Neo4j;
 /**
  * Servlet implementation class CreateUsersServlet
  */
+@WebServlet("/CreateUsersServlet")
 public class CreateUsersServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -36,22 +38,21 @@ public class CreateUsersServlet extends HttpServlet {
 	 	response.setContentType("application/json");
 	 	response.setCharacterEncoding("UTF-8");
 	 	JSONObject myResponse = new JSONObject();
-	 	JSONArray insertionResult = new JSONArray();
 	 	String name = request.getParameter("name");
 	 	String password = request.getParameter("password");
 //	 	String rentability = request.getParameter("rentability");
 //	 	String rentability = request.getParameter("rentability");
 //	 	String rentability = request.getParameter("rentability");
-	 	
-	 	 try ( Neo4j neo4jDriver = new Neo4j( "bolt://localhost:7687", "neo4j", "Manager123" ) )
+	 	try ( Neo4j neo4jDriver = new Neo4j( "bolt://localhost:7687", "neo4j", "Manager123" ) )
 	        {
 			 	String myResultTx = neo4jDriver.insertPerson1(name, password);
+	        	myResponse.put("Resultado", myResultTx);
 	        	
-			 	myResponse.put("resultado", myResultTx);
 	        } catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				myResponse.put("resultado", "Error: " + e.getMessage());
+				
 			}
 	 	
 	 	
