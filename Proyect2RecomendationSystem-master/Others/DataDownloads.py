@@ -32,6 +32,23 @@ df2 = df_list[-8]
 print(df2)
 #df.to_csv(r'C:\Users\Administrator\Documents\Proyecto\Proyecto2\Proyect2RecomendationSystem-master\Others\data.csv', index=False)
 greeter = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "Manager123"))
+with greeter.session() as session:
+    query2 = "match(a:Business)-[r:SameSector]->() delete r"
+    session.run(query2)
+    query2 = "match(a:Business)-[r:SimilarBenefitRatio]->() delete r"
+    session.run(query2)
+    query2 = "match(a:Business)-[r:SimilarDividendos]->() delete r"
+    session.run(query2)
+    query2 = "match(a:Business)-[r:SimilarExpectativaDeBeneficio]->() delete r"
+    session.run(query2)
+    query2 = "match(a:Business)-[r:SimilarPrecioConLibros]->() delete r"
+    session.run(query2)
+    query2 = "match(a:Business)-[r:SimilarVariacion]->() delete r"
+    session.run(query2)
+    query2 = "match(a:Business)-[r:SimilarCotizacion]->() delete r"
+    session.run(query2)
+    query2 = "match(a:Business) delete a"
+    session.run(query2)
 n=0
 names= []
 pers = []
@@ -49,7 +66,7 @@ while (n<35):
     if (a!='-'):
         per=int(a)
     else:
-        per=-10000
+        per=-10000 
     b=df['PEG'].values[n]
    
     if (b!="-"):
@@ -125,11 +142,11 @@ with greeter.session() as session:
     session.run(query4)
     query5 = "match (a:Business),(b: Business) where a.PEG<>-10000 and b.PEG<>-10000 and a.PEG<=10 and b.PEG<=10 and a.name<>b.name or a.PEG>10 and b.PEG>10 and a.PEG<=40 and b.PEG<=40 and a.name<>b.name or a.PEG>40 and b.PEG>40 and a.PEG<=1000 and b.PEG<=1000 and a.name<>b.name or a.PEG>1000 and b.PEG>1000 and a.name<>b.name Create(a)-[:SimilarExpectativaDeBeneficio{name:a.name+'<->'+b.name}]->(b)"
     session.run(query5)
-    query6 = "match (a:Business),(b: Business) where a.DIV<=0.015 and b.DIV<=0.015 and a.name<>b.name or a.DIV>0.05 and b.DIV>0.05 and a.DIV<=0.04 and b.DIV<=0.04 and a.name<>b.name or a.DIV>0.04 and b.DIV>0.04 and a.DIV<=0.06 and b.DIV<=0.06 and a.name<>b.name or a.DIV>0.06 and b.DIV>0.06 and a.name<>b.name Create(a)-[:SimilarDividends{name:a.name+'<->'+b.name}]->(b)"
+    query6 = "match (a:Business),(b: Business) where a.DIV<=0.015 and b.DIV<=0.015 and a.name<>b.name or a.DIV>0.05 and b.DIV>0.05 and a.DIV<=0.04 and b.DIV<=0.04 and a.name<>b.name or a.DIV>0.04 and b.DIV>0.04 and a.DIV<=0.06 and b.DIV<=0.06 and a.name<>b.name or a.DIV>0.06 and b.DIV>0.06 and a.name<>b.name Create(a)-[:SimilarDividendos{name:a.name+'<->'+b.name}]->(b)"
     session.run(query6)
     query7 = "match (a:Business),(b: Business) where a.VAR<=0.00 and b.VAR<=0.00 and a.name<>b.name or a.VAR>0.00 and b.VAR>0.00 and a.VAR<=0.0015 and b.VAR<=0.0015 and a.name<>b.name or a.VAR>0.0015 and b.VAR>0.0015 and a.VAR<=0.004 and b.VAR<=0.004 and a.name<>b.name or a.VAR>0.004 and b.VAR>0.004 and a.VAR<=0.007 and b.VAR<=0.007 and a.name<>b.name or a.VAR>0.007 and b.VAR>0.007 and a.name<>b.name Create(a)-[:SimilarVariacion{name:a.name+'<->'+b.name}]->(b)"
     session.run(query7)
-    query8 = "match (a:Business),(b: Business) where a.COTIZACION<=700 and b.COTIZACION<=700 and a.name<>b.name or a.COTIZACION>700 and b.COTIZACION>700 and a.COTIZACION<=4000 and b.COTIZACION<=4000 and a.name<>b.name or a.COTIZACION>4000 and b.COTIZACION>4000 and a.COTIZACION<=12000 and b.COTIZACION<=12000 and a.name<>b.name or a.COTIZACION>12000 and b.COTIZACION>12000 and a.COTIZACION<=18000 and b.COTIZACION<=18000 and a.name<>b.name or a.COTIZACION>18000 and b.COTIZACION>18000 and a.name<>b.name Create(a)-[:SimilarDividendos{name:a.name+'<->'+b.name}]->(b)"
+    query8 = "match (a:Business),(b: Business) where a.COTIZACION<=700 and b.COTIZACION<=700 and a.name<>b.name or a.COTIZACION>700 and b.COTIZACION>700 and a.COTIZACION<=4000 and b.COTIZACION<=4000 and a.name<>b.name or a.COTIZACION>4000 and b.COTIZACION>4000 and a.COTIZACION<=12000 and b.COTIZACION<=12000 and a.name<>b.name or a.COTIZACION>12000 and b.COTIZACION>12000 and a.COTIZACION<=18000 and b.COTIZACION<=18000 and a.name<>b.name or a.COTIZACION>18000 and b.COTIZACION>18000 and a.name<>b.name Create(a)-[:SimilarCotizacion{name:a.name+'<->'+b.name}]->(b)"
     session.run(query8)
 
 

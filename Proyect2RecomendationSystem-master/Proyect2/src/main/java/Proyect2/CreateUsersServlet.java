@@ -39,13 +39,16 @@ public class CreateUsersServlet extends HttpServlet {
 	 	response.setCharacterEncoding("UTF-8");
 	 	JSONObject myResponse = new JSONObject();
 	 	String name = request.getParameter("name");
-	 	String password = request.getParameter("password");
+	 	String password = request.getParameter("Password");
+	 	String sector1 = request.getParameter("typeSector1");
+	 	String sector2 = request.getParameter("typeSector2");
+	 	String sector3 = request.getParameter("typeSector3");
 //	 	String rentability = request.getParameter("rentability");
 //	 	String rentability = request.getParameter("rentability");
 //	 	String rentability = request.getParameter("rentability");
 	 	try ( Neo4j neo4jDriver = new Neo4j( "bolt://localhost:7687", "neo4j", "Manager123" ) )
 	        {
-			 	String myResultTx = neo4jDriver.insertPerson1(name, password);
+			 	String myResultTx = neo4jDriver.insertPerson1(name, password, sector1, sector2, sector3);
 	        	myResponse.put("Resultado", myResultTx);
 	        	
 	        } catch (Exception e) {

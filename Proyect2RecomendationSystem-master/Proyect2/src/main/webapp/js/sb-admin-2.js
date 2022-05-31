@@ -53,19 +53,23 @@
     e.preventDefault();
   });
   
-	//Evento del botón que creara una nueva pelicula
+	//Evento del botón que creara un nuevo usuario
 	$("#btn-insert-user").click(function(){
 				
 		$.ajax( {
 			
 			type: "GET",
-			url: '/Proyect2/CreateUsersServlet?name=' + $('#username').val() + '&password=' + $('#password').val() ,
+			url: '/Proyect2/CreateUsersServlet?name=' + $('#username').val() + '&Password=' + $('#userpassword').val() + '&typeSector1=' + $('#Sector1').val() + '&typeSector2=' + $('#Sector2').val() + '&typeSector3=' + $('#Sector3').val(),
 			success: function(data) {
 			    alert("Resultado1: " + data.resultado);
 			}
 		} );
 		
 		
+
+        function newFunction() {
+            return ').val() + ';
+        }
 	});
 
 })(jQuery); // End of use strict
