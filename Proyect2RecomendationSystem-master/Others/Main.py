@@ -14,7 +14,7 @@ df = df_list[-1]
 df2 = df_list[-8]
 # print(df2)
 #df.to_csv(r'C:\Users\Administrator\Documents\Proyecto\Proyecto2\Proyect2RecomendationSystem-master\Others\data.csv', index=False)
-greeter = GraphDatabase.driver("neo4j+s://c5279997.databases.neo4j.io", auth=("neo4j", "LPXUNTzhTSuSg6dyX_7Ip6tAchtJkqQL0DqZCnBczPM"))
+greeter = GraphDatabase.driver("neo4j://localhost:7687", auth=("neo4j", "Manager123"))
 with greeter.session() as session:
     query2 = "match(a:User)-[r:Agresividad_Para_Invertir]->() delete r"
     session.run(query2)
@@ -176,8 +176,8 @@ while (True):
         print("\nRegistrarse")
         username = input("\nIngrese su username: ")
         password = input("\nIngrese su contrasenia: ")
-        name = input("\nIngrese su nombre: ")
-        surname = input("\nIngrese su apellido: ")
+        name = input("\nIngrese uno de sus nombres: ")
+        surname = input("\nIngrese uno de sus apellidos: ")
         array = ["Bancos", "Mineria", "Quimica", "Aerolineas", "Energia", "Transporte", "Mecanica", "Turismo", "Textiles", "Salud", "Telecomunicaciones", "Inmobiliaria"]
         sector1 = input("\nIngrese un sector que le interese interese (Bancos, Mineria, Quimica, Aerolineas, Energia, Transporte, Mecanica, Turismo, Textiles, Salud, Telecomunicaciones, Inmobiliaria): ")
        
