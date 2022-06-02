@@ -45,51 +45,13 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Encontrar empresas acordes a tus gustoss</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Encontrar empresas acordes a tus gustos</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
                     </div>
 
-                    <!-- Actor Content Row -->
-                    <div class="row">
-
-
-					<div class="col-lg-4"></div>
-                    <div class="col-lg-4">
-                        
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Registrar</h1>
-                            </div>
-						<form class="user">
-                                
                                     
-							<input type="text" class="form-control" id="txt-actor" placeholder="Actor Name">
-                                    
-                           	<br/>
-                                    
-							<input type="button" class="btn btn-primary form-control" id="btn-search-movies-by-actor" value="Buscar Peliculas de Actor">
-							
-							<br/>
-							<br/>
-							
-							<input type="button" class="btn btn-primary form-control" id="btn-search-actors" value="Ver actores">
-							
-							<br/>
-							
-							<hr>
-                                
-						</form>
-                            <hr>
-                            
-                        
-                    </div>
-                    <div class="col-lg-4"></div>
-
-                    </div>
-                    <!--  End of Actor content row -->
-					
-                    
-                     <!-- Content Row -->
+                    <!-- Content Row -->
                     <div class="row">
 
 
@@ -114,7 +76,7 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create User</h1>
                             </div>
-						<form class="user">
+						<form class="user" method="post">
                                 
                                     
 							<input type="text" class="form-control" id="username" placeholder="Username: Daniel">
@@ -140,24 +102,24 @@
                            	<input type="number" class="form-control" id="Risk" placeholder="Riesgo: 0-5">
                                     
                            	<br/> 
-                            
-                            <input type="number" class="form-control" id="InvestingPotency" placeholder="Potencia de Inversion: 0-5">
-                                    
-                           	<br/> 
                            	
                            	<input type="number" class="form-control" id="Rentability" placeholder="Rentabilidad: 0-5">
-                                    
-                           	<br/> 
-                      		
-                           	<input type="number" class="form-control" id="InvestingPotency" placeholder="Potencia de Inversion: 0-5">
-                                    
+                       		
                            	<br/>  
                            	
                            	<input type="number" class="form-control" id="Size" placeholder="Tamanio de la Empresa: 0-5">
                                     
                            	<br/>           
+                           	
+                           	<input type="number" class="form-control" id="Books" placeholder="Empresa lo mas acorde con libros: 0-5">
+                                    
+                           	<br/>
+                           	
+                           	<input type="number" class="form-control" id="Fierce" placeholder="Agresivo al momento de invertir: 0-5">
+                                    
+                           	<br/>
                            	              
-							<input type="button" class="btn btn-primary form-control" id="btn-insert-user" value="Create New User">
+							<input type="submit" class="btn btn-primary form-control" id="btn-insert-user" value="Create New User">
 							
 							<br/>
 

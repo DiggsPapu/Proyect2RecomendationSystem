@@ -140,7 +140,7 @@ public String insertPerson(final int id, String name, final int password, final 
     }
 }
 
-public String insertPerson1(final String name, final String password, final String sector1, final String sector2, final String sector3 ) {
+public String insertPerson2(final String name, final String password, final String sector1, final String sector2, final String sector3 ) {
 	try ( Session session = driver.session() ) //Initialize driver
     {
 		 
@@ -156,14 +156,8 @@ public String insertPerson1(final String name, final String password, final Stri
             	String TypeSector1 = new String(sector1);
             	String TypeSector2 = new String(sector2);
             	String TypeSector3 = new String(sector3);
-            	boolean val1 = TypeSector1.equals("Bancos") || TypeSector1.equals("Mineria") || TypeSector1.equals("Aerolineas") || TypeSector1.equals("Transporte") || TypeSector1.equals("Energia") || TypeSector1.equals("Mecanica") || TypeSector1.equals("Turismo") || TypeSector1.equals("Quimica") || TypeSector1.equals("Textiles") || TypeSector1.equals("Salud") || TypeSector1.equals("Telecomunicaciones") || TypeSector1.equals("Inmobiliaria");
-            	boolean val2 = TypeSector2.equals("Bancos") || TypeSector2.equals("Mineria") || TypeSector2.equals("Aerolineas") || TypeSector2.equals("Transporte") || TypeSector2.equals("Energia") || TypeSector2.equals("Mecanica") || TypeSector2.equals("Turismo") || TypeSector2.equals("Quimica") || TypeSector2.equals("Textiles") || TypeSector2.equals("Salud") || TypeSector2.equals("Telecomunicaciones") || TypeSector2.equals("Inmobiliaria");
-            	boolean val3 = TypeSector3.equals("Bancos") || TypeSector3.equals("Mineria") || TypeSector3.equals("Aerolineas") || TypeSector3.equals("Transporte") || TypeSector3.equals("Energia") || TypeSector3.equals("Mecanica") || TypeSector3.equals("Turismo") || TypeSector3.equals("Quimica") || TypeSector3.equals("Textiles") || TypeSector3.equals("Salud") || TypeSector3.equals("Telecomunicaciones") || TypeSector3.equals("Inmobiliaria");
             	
-            	if ( val1 && val2 && val3 ) {
-            		tx.run( "CREATE ( b : user { name:'" + name1 + "', password:'"+ password1 + "', TypeBusiness1:'"+ TypeSector1 + "', TypeBusiness2:'"+ TypeSector2 + "', TypeBusiness3:'"+ TypeSector3 + "'})");
-                	
-            	}
+            	
             	tx.run( "CREATE ( b : user { name:'" + name1 + "', password:'"+ password1 + "', TypeBusiness1:'"+ TypeSector1 + "', TypeBusiness2:'"+ TypeSector2 + "', TypeBusiness3:'"+ TypeSector3 + "'})");
             	
                 return "OK";
@@ -177,4 +171,53 @@ public String insertPerson1(final String name, final String password, final Stri
     	return e.getMessage();
     }
 }
+
+public String insertPerson1(final String name, final String password, final String sector1, final String sector2, final String sector3, final int risk, final int rent, final int size, final int  books, final int fierce) {
+	try ( Session session = driver.session() ) //Initialize driver
+    {
+		 
+		 String result = session.writeTransaction( new TransactionWork<String>()
+		 
+        {
+            @Override
+            public String execute( Transaction tx )
+            {
+            	String name1 = new String(name);
+            	String password1 = new String(password);
+            	
+            	String TypeSector1 = new String(sector1);
+            	String TypeSector2 = new String(sector2);
+            	String TypeSector3 = new String(sector3);
+            	int risk1 = risk;
+            	int rent1 = rent;
+            	int size1 = size;
+            	int books1 = books;
+            	int fierce1 = fierce;
+            	
+            	tx.run( "CREATE ( b : user { name:'" + name1 + "', password:'" + password1 + "', TypeBusiness1:'" + TypeSector1 + "', TypeBusiness2:'" + TypeSector2 + "', TypeBusiness3:'" + TypeSector3 + "', riesgo:" + risk1 + ", rentabilidad:" + rent1 + ", tamanio:" + size1 + ", libros:" + books1 + ", agresividad:" + fierce1 + "})");
+//            	//Match the user with the business sector
+//            	tx.run( "match( a : user ), ( b : Business ) where a.TypeBusiness1=b.SECTOR OR a.TypeBusiness2=b.SECTOR OR a.TypeBusiness3=b.SECTOR AND a.name=" + name1 + " AND a.password=" + password1 + " Create(a)-[r:InterestedInTheSectorOf{name: a.name +'<->' + b.name}]->(b)");
+//		 		//Match the user with the Business risk
+//		 		tx.run( "match( a : USUARIO ),( b : Business ) where a.Risk>=6 AND b.VAR=-10000 AND a.name=" + name1 + "AND a.password=" + password1 + "OR a.Risk=5 AND b.VAR<=0 AND b.VAR<>-10000 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Risk=4 AND b.VAR<=0.0015 AND b.VAR>0 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Risk=3 AND b.VAR>0.0015 AND b.VAR<=0.004 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Risk=2 AND b.VAR>0.004 AND b.VAR<=0.007 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Risk=1 AND b.VAR>0.007 AND a.name=" + name1 + " AND a.password=" + password1 + "Create(a)-[r:IdealVariacion{name:a.name+'<->'+b.name}]->(b)");
+//		 		//Match the user with the Business Rentability
+//		 		tx.run( "match( a : USUARIO ),( b : Business ) where a.Rentabilidad=0 AND b.PER<>-10000 AND b.PER<=700 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Rentabilidad=2 AND b.PER>700 AND b.PER<=1400 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Rentabilidad=3 AND b.PER>1400 AND b.PER<=2000 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Rentabilidad=5 AND b.PER>2000 AND a.name=" + name1 + " AND a.password=" + password1 + " Create(a)-[r:IdealBenefitRelation{name:a.name+'<->'+b.name}]->(b)");
+//		 		//Match the user with the Business Size
+//		 		tx.run( "match( a : USUARIO ),( b : Business ) where a.Tamanio=0 AND b.COTIZACION<=700 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Tamanio=2 AND b.COTIZACION>700 AND b.PER<=4000 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Tamanio=3 AND b.COTIZACION>4000 AND b.COTIZACION<=12000 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Tamanio=2 AND b.COTIZACION>12000 AND b.COTIZACION<=18000 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Tamanio=1 AND b.COTIZACION>18000 AND a.name=" + name1 + " AND a.password=" + password1 + " Create(a)-[r:IdealTamanio{name:a.name+'<->'+b.name}]->(b)");
+//		 		//Match the user with the Business Books
+//		 		tx.run( "match( a : USUARIO ),( b : Business ) where a.Libros<=0 AND b.PVC<>-10000 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Libros=1 AND b.PVC<=100 AND b.PVC<>-10000 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Tamanio=2 AND b.PVC>100 AND b.PVC<=300 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Libros=3 AND b.PVC>300 AND b.PVC<=700 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Libros=4 AND b.PVC>300 AND b.PVC<=700 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Libros=5 AND b.PVC>700 AND a.name=" + name1 + " AND a.password=" + password1 + " Create(a)-[r:IdealReporteDeLibros{name:a.name+'<->'+b.name}]->(b)");
+//		 		//Match the user with the Business Fierce
+//		 		tx.run( "match( a : USUARIO ),( b : Business ) where a.Agresividad<=0 AND b.PEG<>-10000 AND b.PEG<=10 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Agresividad=1 AND b.PEG<=40 AND b.PEG>10 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Agresividad=2 AND b.PEG>40 AND b.PEG<=1000 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Agresividad>=3 AND b.PEG>1000 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Libros=4 AND b.PVC>300 AND b.PVC<=700 AND a.name=" + name1 + " AND a.password=" + password1 + "OR a.Libros=5 AND b.PVC>700 AND a.name=" + name1 + " AND a.password=" + password1 + " Create(a)-[r:IdealReporteDeLibros{name:a.name+'<->'+b.name}]->(b)");
+////		 		
+		 		return "OK";
+            }
+        }
+		 
+		 );
+        
+        return null;
+    } catch (Exception e) {
+    	return e.getMessage();
+    }
+}
+
 }

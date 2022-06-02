@@ -59,7 +59,7 @@
 		$.ajax( {
 			
 			type: "GET",
-			url: '/Proyect2/CreateUsersServlet?name=' + $('#username').val() + '&Password=' + $('#userpassword').val() + '&typeSector1=' + $('#Sector1').val() + '&typeSector2=' + $('#Sector2').val() + '&typeSector3=' + $('#Sector3').val(),
+			url: '/Proyect2/CreateUsersServlet?name=' + $('#username').val() + '&Password=' + $('#userpassword').val() + '&typeSector1=' + $('#Sector1').val() + '&typeSector2=' + $('#Sector2').val() + '&typeSector3=' + $('#Sector3').val() + '&risk=' + $('#Risk').val() + '&rent=' + $('#Rentability').val() + '&size=' + $('#Size').val() + '&books=' + $('#Books').val() + '&fierce=' + $('#Fierce').val() ,
 			success: function(data) {
 			    alert("Resultado1: " + data.resultado);
 			}

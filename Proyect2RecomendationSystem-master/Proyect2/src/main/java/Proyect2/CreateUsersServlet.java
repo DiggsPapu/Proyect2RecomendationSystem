@@ -43,12 +43,14 @@ public class CreateUsersServlet extends HttpServlet {
 	 	String sector1 = request.getParameter("typeSector1");
 	 	String sector2 = request.getParameter("typeSector2");
 	 	String sector3 = request.getParameter("typeSector3");
-//	 	String rentability = request.getParameter("rentability");
-//	 	String rentability = request.getParameter("rentability");
-//	 	String rentability = request.getParameter("rentability");
+	 	int Risk = Integer.valueOf(request.getParameter("risk"));
+	 	int rentability = Integer.valueOf(request.getParameter("rent"));
+	 	int Size = Integer.valueOf(request.getParameter("size"));
+	 	int Books= Integer.valueOf(request.getParameter("books"));
+	 	int Fierce = Integer.valueOf(request.getParameter("fierce"));
 	 	try ( Neo4j neo4jDriver = new Neo4j( "bolt://localhost:7687", "neo4j", "Manager123" ) )
 	        {
-			 	String myResultTx = neo4jDriver.insertPerson1(name, password, sector1, sector2, sector3);
+			 	String myResultTx = neo4jDriver.insertPerson1(name, password, sector1, sector2, sector3, Risk, rentability, Size, Books, Fierce);
 	        	myResponse.put("Resultado", myResultTx);
 	        	
 	        } catch (Exception e) {

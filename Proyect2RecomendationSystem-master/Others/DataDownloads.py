@@ -33,6 +33,18 @@ print(df2)
 #df.to_csv(r'C:\Users\Administrator\Documents\Proyecto\Proyecto2\Proyect2RecomendationSystem-master\Others\data.csv', index=False)
 greeter = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "Manager123"))
 with greeter.session() as session:
+    query2 = "match(a:User)-[r:Agresividad_Para_Invertir]->() delete r"
+    session.run(query2)
+    query2 = "match(a:User)-[r:Relacion_Con_Libros_De_Interes]->() delete r"
+    session.run(query2)
+    query2 = "match(a:User)-[r:Sector_De_Interes]->() delete r"
+    session.run(query2)
+    query2 = "match(a:User)-[r:Tamanio_De_Interes]->() delete r"
+    session.run(query2)
+    query2 = "match(a:User)-[r:Riesgo_De_Interes]->() delete r"
+    session.run(query2)
+    query2 = "match(a:Business)-[r:Rentabilidad_De_Interes]->() delete r"
+    session.run(query2)
     query2 = "match(a:Business)-[r:SameSector]->() delete r"
     session.run(query2)
     query2 = "match(a:Business)-[r:SimilarBenefitRatio]->() delete r"
@@ -85,7 +97,7 @@ while (n<35):
 
     e=df2["Var %"].values[n]
     e=e.replace(",",".")
-    var=float(float(e[:-1])/100)
+    var=float(abs(float(e[:-1]))/100)
     cot=int(df2["Último"].values[n])
     sector = ""
     if (nombre=="Banco Sabadell" or nombre=="Banco Santander" or nombre=="Caixabank" or nombre=="Bankinter" or nombre=="BBVA"):
@@ -131,8 +143,15 @@ while (n<35):
 with greeter.session() as session:
     k=0
     # while (k<35):
-            
-    #     k=k+1
+    # PER:Razon Precio Beneficio - Rentabilidad
+    # VAR: Valor en Riesgo - Risk
+    # PVC: Libros - Books
+    # Cotizacion: Valor de la accion - Size
+    # Dividendos: El reparto de beneficios - Rentability
+    # PEG: Inversores agresivos   - Fierce
+        
+    query5 = "match (a:Business),(b: Business) where a.PEG<>-10000 and b.PEG<>-10000 and a.PEG<=10 and b.PEG<=10 and a.name<>b.name or a.PEG>10 and b.PEG>10 and a.PEG<=40 and b.PEG<=40 and a.name<>b.name or a.PEG>40 and b.PEG>40 and a.PEG<=1000 and b.PEG<=1000 and a.name<>b.name or a.PEG>1000 and b.PEG>1000 and a.name<>b.name Create(a)-[:SimilarExpectativaDeBeneficio{name:a.name+'<->'+b.name}]->(b)"
+    session.run(query5)
     query2 = "match(a:Business),(b: Business) where a.SECTOR = b.SECTOR and a.name<>b.name Create(a)-[:SameSector{name:a.name+'<->'+b.name}]->(b)"
     session.run(query2)
 
@@ -140,14 +159,27 @@ with greeter.session() as session:
     session.run(query3)                                                                                                                                                                                                                                                                                                                                                                                              #Create(a)-[:SimilarBenefitRatio{name:a.name+'<->'+b.name}]->(b)
     query4 = "match (a:Business),(b: Business) where a.PVC<>-10000 and b.PVC<>-10000 and a.PVC<=100 and b.PVC<=100 and a.name<>b.name or a.PVC>100 and b.PVC>100 and a.PVC<=300 and b.PVC<=300 and a.name<>b.name or a.PVC>300 and b.PVC>300 and a.PVC<=700 and b.PVC<=700 and a.name<>b.name or a.PVC>700 and b.PVC>700 and a.PVC<=800 and b.PVC<=800 and a.name<>b.name or a.PVC>800 and b.PVC>800 and a.name<>b.name Create(a)-[:SimilarPrecioConLibros{name:a.name+'<->'+b.name}]->(b)"
     session.run(query4)
-    query5 = "match (a:Business),(b: Business) where a.PEG<>-10000 and b.PEG<>-10000 and a.PEG<=10 and b.PEG<=10 and a.name<>b.name or a.PEG>10 and b.PEG>10 and a.PEG<=40 and b.PEG<=40 and a.name<>b.name or a.PEG>40 and b.PEG>40 and a.PEG<=1000 and b.PEG<=1000 and a.name<>b.name or a.PEG>1000 and b.PEG>1000 and a.name<>b.name Create(a)-[:SimilarExpectativaDeBeneficio{name:a.name+'<->'+b.name}]->(b)"
-    session.run(query5)
+    
     query6 = "match (a:Business),(b: Business) where a.DIV<=0.015 and b.DIV<=0.015 and a.name<>b.name or a.DIV>0.05 and b.DIV>0.05 and a.DIV<=0.04 and b.DIV<=0.04 and a.name<>b.name or a.DIV>0.04 and b.DIV>0.04 and a.DIV<=0.06 and b.DIV<=0.06 and a.name<>b.name or a.DIV>0.06 and b.DIV>0.06 and a.name<>b.name Create(a)-[:SimilarDividendos{name:a.name+'<->'+b.name}]->(b)"
     session.run(query6)
-    query7 = "match (a:Business),(b: Business) where a.VAR<=0.00 and b.VAR<=0.00 and a.name<>b.name or a.VAR>0.00 and b.VAR>0.00 and a.VAR<=0.0015 and b.VAR<=0.0015 and a.name<>b.name or a.VAR>0.0015 and b.VAR>0.0015 and a.VAR<=0.004 and b.VAR<=0.004 and a.name<>b.name or a.VAR>0.004 and b.VAR>0.004 and a.VAR<=0.007 and b.VAR<=0.007 and a.name<>b.name or a.VAR>0.007 and b.VAR>0.007 and a.name<>b.name Create(a)-[:SimilarVariacion{name:a.name+'<->'+b.name}]->(b)"
+    query7 = "match (a:Business),(b: Business) where (a.VAR<=0.00 and b.VAR<=0.00 and a.name<>b.name or a.VAR>0.00 and b.VAR>0.00 and a.VAR<=0.0015 and b.VAR<=0.0015 and a.name<>b.name or a.VAR>0.0015 and b.VAR>0.0015 and a.VAR<=0.004 and b.VAR<=0.004 and a.name<>b.name or a.VAR>0.004 and b.VAR>0.004 and a.VAR<=0.007 and b.VAR<=0.007 and a.name<>b.name or a.VAR>0.007 and b.VAR>0.007 and a.name<>b.name) Create(a)-[:SimilarVariacion{name:a.name+'<->'+b.name}]->(b)"
     session.run(query7)
     query8 = "match (a:Business),(b: Business) where a.COTIZACION<=700 and b.COTIZACION<=700 and a.name<>b.name or a.COTIZACION>700 and b.COTIZACION>700 and a.COTIZACION<=4000 and b.COTIZACION<=4000 and a.name<>b.name or a.COTIZACION>4000 and b.COTIZACION>4000 and a.COTIZACION<=12000 and b.COTIZACION<=12000 and a.name<>b.name or a.COTIZACION>12000 and b.COTIZACION>12000 and a.COTIZACION<=18000 and b.COTIZACION<=18000 and a.name<>b.name or a.COTIZACION>18000 and b.COTIZACION>18000 and a.name<>b.name Create(a)-[:SimilarCotizacion{name:a.name+'<->'+b.name}]->(b)"
     session.run(query8)
-
-
+    query9 = "MATCH (a:User), (b:Business) WHERE a.Riesgo>5 AND b.VAR=-10000 OR a.Riesgo>=0 AND a.Riesgo<1 AND b.VAR<=0.0010 OR a.Riesgo>=1 AND a.Riesgo<2 AND b.VAR<0.0015 AND b.VAR>=0.0010 OR a.Riesgo>=2 AND a.Riesgo<3 AND b.VAR<0.004 AND b.VAR>=0.0015 OR  a.Riesgo>=3 AND a.Riesgo<4 AND b.VAR<0.006 AND b.VAR>=0.004 OR  a.Riesgo>=4 AND a.Riesgo<5 AND b.VAR<0.007 AND b.VAR>=0.006 OR a.Riesgo>=5 AND b.VAR>0.007 CREATE(a)-[r:Riesgo_De_Interes{name:a.name+'<->'+b.name}]->(b)"
+    session.run(query9)
+    query10 = " MATCH (a:User), (b:Business) WHERE b.SECTOR = a.Sector_Interes1 OR b.SECTOR = a.Sector_Interes2 OR b.SECTOR = a.Sector_Interes3 CREATE (a)-[r:Sector_De_Interes{name: a.name+'<->'+b.name}]->(b)"
+    session.run(query10)
+    query11 = "MATCH (a:User), (b:Business) WHERE a.Rentabilidad<0 AND b.PER=-10000 OR a.Rentabilidad<=0 AND a.Rentabilidad>1 AND b.PER>=0 AND b.PER<300 OR a.Rentabilidad<=1 AND a.Rentabilidad>2 AND b.PER<800 AND b.PER>=300 OR a.Rentabilidad<=2 AND a.Rentabilidad>3 AND b.PER<1400 AND b.PER>=800 OR  a.Rentabilidad<=3 AND a.Rentabilidad>4 AND b.PER<2000 AND b.PER>=1400 OR  a.Rentabilidad<=4 AND a.Rentabilidad>5 AND b.PER>=2000 AND b.PER<5000 OR a.Rentabilidad>=5 AND b.PER>=5000 CREATE (a)-[r:Rentabilidad_De_Interes{name:a.name+'<->'+b.name}]->(b)"
+    session.run(query11)
+    query12 = " MATCH (a:User), (b:Business) WHERE (a.Tamanio<=0 AND a.Tamanio>1 AND b.COTIZACION<700 OR a.Tamanio=1  AND b.COTIZACION<4000 AND b.COTIZACION>=700 OR a.Tamanio=2 AND b.COTIZACION<12000 AND b.COTIZACION>=4000 OR  a.Tamanio=3 AND b.COTIZACION<18000 AND b.COTIZACION>=12000 OR  a.Tamanio=4 AND b.COTIZACION>=18000 AND b.COTIZACION<20000 OR a.Tamanio=5 AND b.COTIZACION>=20000 ) CREATE (a)-[r:Tamanio_De_Interes{name:a.name+'<->'+b.name}]->(b)"
+    session.run(query12)
+    query13 = " MATCH (a:User), (b:Business) WHERE (a.Libros=0 AND b.PVC=-10000 OR a.Libros=1  AND b.PVC<100 OR a.Libros=2 AND b.PVC<300 AND b.PVC>=100 OR  a.Libros=3 AND b.PVC<700 AND b.PVC>=300 OR  a.Libros=4 AND b.PVC>=700 AND b.PVC<800 OR a.Libros=5 AND b.PVC>=800 ) CREATE (a)-[r:Relacion_Con_Libros_De_Interes{name:a.name+'<->'+b.name}]->(b)"
+    session.run(query13)
+    query14 = "MATCH (a:User), (b:Business) WHERE (a.Agresividad=0 AND b.PEG<=10 OR a.Agresividad=1  AND b.PEG<30 AND b.PEG>10 OR a.Agresividad=2 AND b.PEG<80 AND b.PEG>=30 OR  a.Agresividad=3 AND b.PEG<150 AND b.PEG>=100 OR  a.Agresividad=4 AND b.PEG>=100 AND b.PEG<500 OR a.Agresividad=5 AND b.PEG>=500 ) CREATE (a)-[r:Agresividad_Para_Invertir{name:a.name+'<->'+b.name}]->(b)"
+    session.run(query14)
+#and return (exists( (a)-[:SimilarExpectativaDeBeneficio]->(b) ))=false 
+#and (exists( (a)-[:SimilarDividendos]->(b) ))=false 
+#and (exists( (a)-[:SimilarVariacion]->(b) ))=false 
+#and (exists( (a)-[:SimilarCotizacion]->(b) ))=false 
 greeter.close()
