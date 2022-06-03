@@ -8,3 +8,7 @@ Con pip instalar en command prompt neo4j - pip install neo4j
 Con pip instalar en command prompt pandas - pip install pandas
 Con pip instalar en command prompt py2neo - pip install py2neo
 Con pip instalar en command prompt requests - pip install requests
+Files:
+EL UNICO PAQUETE IMPORTANTE ES Proyect2RecomendationSystem
+Y en others tiene el Main.py donde se ejecuta el programa
+UserCreator que es una clase para crear usuarios
