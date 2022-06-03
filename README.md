@@ -12,3 +12,5 @@ Files:
 EL UNICO PAQUETE IMPORTANTE ES Proyect2RecomendationSystem
 Y en others tiene el Main.py donde se ejecuta el programa
 UserCreator que es una clase para crear usuarios
+https://youtu.be/a09iCEHqP2M
+ese es el video para la prueba de usuarios
